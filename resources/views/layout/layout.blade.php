@@ -1,12 +1,15 @@
+<!DOCTYPE html>
 <html lang="lang="{{ str_replace('_', '-', app()->getLocale()) }}"">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <script src="{{ asset('js/laravel.js') }}" defer></script>
     <link href="{{ asset('css/laravel.css') }}" rel="stylesheet">
-    @yield('title')
+    @yield('head')
 </head>
 <body>
-    @include('layout.nav')
+    @include("layout.nav")
     @yield('content')
+    @include("layout.footer")
+    <script src="{{ asset('js/laravel.js') }}" defer></script>
+    <script src="{{ asset("js/navbar-active.js") }}"></script>
 </body>
 </html>
