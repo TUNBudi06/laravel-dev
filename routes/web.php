@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\home;
+use App\Http\Controllers\sosmed_route;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,13 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('home');
 //});
-Route::get('/',[home::class, 'index'])->name("home");
+
+//FOR ROUTING WEB
+Route::get('/',[sosmed_route::class,"home"]);
+Route::get('/home',[home::class,"index"])->name("home");
 Route::get("/aboutme",[home::class,'aboutme'])->name("About");
 Route::get("/contact",[home::class,"contact"])->name("contact");
 
+
+//FOR ROUTING SOSMED
+Route::get("/sosmed/{tipe}",[sosmed_route::class,"socialmedia"])->name("sosmed");
