@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-class home extends Controller {
+class pages extends Controller {
     public function index()
     {
         return view('home');
     }
 
-    public function aboutme() {
-        return view('home');
+    public function aboutme(){
+        return view('aboutme');
     }
     public function  contact(){
-        return view('home');
+        return view('contact');
     }
 }

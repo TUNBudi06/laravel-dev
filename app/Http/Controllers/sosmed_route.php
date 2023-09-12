@@ -17,6 +17,8 @@ class sosmed_route extends Controller
             return redirect("https://github.com/tunbudi06");
         } elseif ($tipe === "telegram"){
             return redirect("http://t.me/TheUnknownName06");
+        } elseif ($tipe === "youtube"){
+            return redirect("https://www.youtube.com/channel/UC9OSZtQZIM89ujl8L5Q9dxA");
         }
     }
 }
