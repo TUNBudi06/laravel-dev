@@ -12,7 +12,7 @@
                         <a href="{{route("home")}}">Home</a>
                     </li>
                     <li>
-                        <a href="{{route("About")}}">About ME</a>
+                        <a href="{{route("about")}}">About ME</a>
                     </li>
                     <li >
                         <a href="{{route("contact")}}">Contact</a>
