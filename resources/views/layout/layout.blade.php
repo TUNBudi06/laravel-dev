@@ -10,6 +10,5 @@
     @yield('content')
     @include("layout.footer")
     <script src="{{ asset('js/laravel.js') }}" defer></script>
-    <script src="{{ asset("js/navbar-active.js") }}"></script>
 </body>
 </html>

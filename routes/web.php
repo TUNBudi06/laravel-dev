@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\pages;
 use App\Http\Controllers\sosmed_route;
+use App\Http\Controllers\feedback;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +25,13 @@ Route::get('/',[sosmed_route::class,"home"]);
 
 //listing web
 Route::get('/home',[pages::class,"index"])->name("home");
-Route::get("/about",[pages::class,'aboutme'])->name("About");
+Route::get("/about",[pages::class,'aboutme'])->name("about");
 Route::get("/contact",[pages::class,"contact"])->name("contact");
 
 
 //FOR ROUTING SOSMED
 Route::get("/sosmed/{tipe}",[sosmed_route::class,"socialmedia"])->name("sosmed");
+
+
+//ROUTING FOR RECEIVING INPUT
+Route::post("/post/feedback",[feedback::class,"urlFeedback"])->name("pFeedback");

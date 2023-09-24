@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class sosmed_route extends Controller
 {
-    public function home(){
+    public function home(): RedirectResponse
+    {
         return redirect()->route('home');
     }
 
