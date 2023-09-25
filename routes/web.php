@@ -25,7 +25,7 @@ Route::get('/',[sosmed_route::class,"home"]);
 
 //listing web
 Route::get('/home',[pages::class,"index"])->name("home");
-Route::get("/about",[pages::class,'aboutme'])->name("about");
+Route::get("/about",[pages::class,'aboutme'])->name("aboutme");
 Route::get("/contact",[pages::class,"contact"])->name("contact");
 
 

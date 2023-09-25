@@ -87,6 +87,9 @@
                                         <label>Name</label>
                                         <div class="input-items default">
                                             <input name="name" type="text" placeholder="Name">
+                                            @error('title')
+
+                                            @enderror
                                             <i class="lni lni-user"></i>
                                         </div>
                                     </div> <!-- form input -->

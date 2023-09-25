@@ -10,13 +10,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link rounded {{ request()->is("home") ? "active" : ""  }}" href="{{route("home")}}">Home</a>
+                    <a class="nav-link rounded {{ request()->url() === route("home") ? "active" : ""  }}" href="{{route("home")}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link rounded {{ request()->is("about") ? "active" : ""  }}" href="{{route("about")}}">About ME</a>
+                    <a class="nav-link rounded {{ request()->url() === route("aboutme")  ? "active" : ""  }}" href="{{route("aboutme")}}">About ME </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link rounded {{ request()->is("contact") ? "active" : ""  }}" href="{{route("contact")}}">Contact</a>
+                    <a class="nav-link rounded {{ request()->url() === route("contact")  ? "active" : ""  }}" href="{{route("contact")}}">Contact</a>
                 </li>
             </ul>
         </div>
