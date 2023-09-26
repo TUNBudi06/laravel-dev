@@ -79,18 +79,22 @@
                     <div class="contact-wrapper form-style-two pt-115">
                         <h4 class="contact-title pb-10"><i class="lni lni-envelope"></i> Leave <span>A Message.</span></h4>
 {{--                        contact start--}}
-                        <form id="contact-form" action="{{route("pFeedback")}}" method="post">
+                        <form id="contact-form" action="{{route("pFeedback")}}"  method="post">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-input mt-25">
+                                    <div class="form-input mt-25 ">
                                         <label>Name</label>
                                         <div class="input-items default">
-                                            <input name="name" type="text" placeholder="Name">
-                                            @error('title')
-
+                                            <input name="name" class="form-control @error('name') is-invalid @enderror" type="text" placeholder="Name" value="{{old("name")}}">
+                                            @error('name')
+                                            <div class="invalid-feedback">{{$message}}</div>
                                             @enderror
-                                            <i class="lni lni-user"></i>
+                                            @if ($errors->has('name'))
+                                                <i class="@error('name') is-invalid @enderror"></i>
+                                            @else
+                                                <i class="lni lni-user"></i>
+                                            @endif
                                         </div>
                                     </div> <!-- form input -->
                                 </div>
@@ -98,8 +102,15 @@
                                     <div class="form-input mt-25">
                                         <label>Email</label>
                                         <div class="input-items default">
-                                            <input type="email" name="email" placeholder="Email">
-                                            <i class="lni lni-envelope"></i>
+                                            <input type="email" value="{{old("email")}}" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email">
+                                            @error('email')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                            @if ($errors->has('name'))
+                                                <i class="@error('name') is-invalid @enderror"></i>
+                                            @else
+                                                <i class="lni lni-envelope"></i>
+                                            @endif
                                         </div>
                                     </div> <!-- form input -->
                                 </div>
@@ -107,10 +118,17 @@
                                     <div class="form-input mt-25">
                                         <label>Massage</label>
                                         <div class="input-items default">
-                                            <textarea name="message" placeholder="Message"></textarea>
-                                            <i class="lni lni-pencil-alt"></i>
+                                            <textarea name="message" value="{{old("message")}}" class="form-control @error('message') is-invalid @enderror" placeholder="Message"></textarea>
+                                            @error('message')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                            @if ($errors->has('name'))
+                                                <i class="@error('name') is-invalid @enderror"></i>
+                                            @else
+                                                <i class="lni lni-pencil-alt"></i>
+                                            @endif
                                         </div>
-                                    </div> <!-- form input -->
+                                    </div>
                                 </div>
                                 <p class="form-message"></p>
                                 <div class="col-md-12">

@@ -59,50 +59,18 @@
                 </div>
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="card col" style="width: 18rem;">
-                            <img src="{{asset("aboutme/assets/img/python.png")}}" class="card-img-top" alt="Python Developer Image">
-                            <div class="card-body">
-                                <h5 class="card-title">Experienced Python Developer</h5>
-                                <p class="card-text">I specialize in the art of Python development, crafting powerful and versatile applications. My experience spans the realm of Python, and I'm here to take your projects to the next level.</p>
-                                <a href="https://docs.python.org/3/"  target="_blank" class="btn btn-outline-primary">Explore Python Docs</a>
+                    @foreach($posts as $list)
+                        <div class="col-md-6 col-lg-4 mb-5">
+                            <div class="card col" style="width: 18rem;">
+                                <img src="{{$list["foto"]}}" class="card-img-top" alt="{{$list["alt-foto"]}}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{$list["judul"]}}</h5>
+                                    <p class="card-text">{{$list["text"]}}</p>
+                                    <a href="{{$list["button-link"]}}"  target="_blank" class="btn btn-outline-primary">{{$list["button-text"]}}</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="card col" style="width: 18rem;">
-                            <img src="{{asset("aboutme/assets/img/cpp.png")}}" class="card-img-top" alt="C/C++ Developer Image">
-                            <div class="card-body">
-                                <h5 class="card-title">Seasoned C/C++ Developer</h5>
-                                <p class="card-text">With a wealth of experience in C and C++ development, I bring precision and efficiency to every project. My expertise spans from optimizing code to crafting robust applications.</p>
-                                <a href="{{ route("sosmed",[ 'tipe' => 'github']) }}" class="btn btn-outline-primary">Explore My Github</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="card col" style="width: 18rem;">
-                            <img src="{{asset("aboutme/assets/img/IT-komputer.png")}}" class="card-img-top" alt="IT and Computer Expertise">
-                            <div class="card-body">
-                                <h5 class="card-title">Backend Developer & IT Enthusiast</h5>
-                                <p class="card-text">I'm not just a Backend Developer; I'm also your go-to expert for server management, computer assembly, and troubleshooting. Whether it's crafting efficient code or assembling the perfect computer setup, I've got you covered.</p>
-                                <a href="{{ route("sosmed",[ 'tipe' => 'instagram']) }}" class="btn btn-outline-primary">Explore My Instagram</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="card col" style="width: 18rem;">
-                            <img src="{{asset("aboutme/assets/img/android.png")}}" class="card-img-top" alt="IT and Computer Expertise">
-                            <div class="card-body">
-                                <h5 class="card-title">Experienced Android Modder and Opreker</h5>
-                                <p class="card-text">I'm not just a Backend Developer; I'm also an Android enthusiast with over 7 years of experience in modding and tweaking Android devices. My passion lies in unlocking the full potential of Android, fixing and enhancing smartphones to meet your unique needs.</p>
-                                <a href="{{ route("sosmed",[ 'tipe' => 'telegram']) }}" class="btn btn-outline-primary">Explore My Telegram</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                     <!-- Portfolio Item 5-->
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="card col" style="width: 18rem;">
