@@ -17,6 +17,8 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link rounded {{ request()->url() === route("contact")  ? "active" : ""  }}" href="{{route("contact")}}">Contact</a>
+                </li><li class="nav-item">
+                    <a class="nav-link rounded {{ request()->url() === route("komentar.index")  ? "active" : ""  }}" href="{{route("komentar.index")}}"><small>Komentar</small></a>
                 </li>
             </ul>
         </div>
