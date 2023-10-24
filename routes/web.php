@@ -35,3 +35,5 @@ Route::get("/sosmed/{tipe}",[sosmed_route::class,"socialmedia"])->name("sosmed")
 
 //ROUTING FOR RECEIVING INPUT
 Route::post("/post/feedback",[feedback::class,"urlFeedback"])->name("pFeedback");
+
+Route::resource("komentar",\App\Http\Controllers\komentarManager::class);
