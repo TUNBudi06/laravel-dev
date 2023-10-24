@@ -24,7 +24,7 @@ class feedbackContact extends FormRequest
     public static function rules()
     {
         return [
-            "name" => "required|alpha",
+            "name" => "required",
             "email" => "email|required",
             "message" => "required"
         ];

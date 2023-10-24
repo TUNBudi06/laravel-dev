@@ -74,6 +74,8 @@ class komentarManager extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $post = komentar::findOrFail("$id");
+        $post->delete();
+        return redirect()->route("komentar.index")->with("delete","successfulluy delete $id");
     }
 }

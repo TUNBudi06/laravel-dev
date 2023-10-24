@@ -28,7 +28,7 @@
                             </form>
                         </div>
                         <div class="col-1 ps-5">
-                            <a href="{{route("komentar.index")}}" class="btn btn-dark">BACk</a>
+                            <a href="{{route("komentar.index")}}" class="btn btn-dark">BACK</a>
                         </div>
                     </div>
                 </div>

@@ -8,6 +8,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
+            @if (session('delete'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('delete') }}<br>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
         <table class="table" width="100%">
             <thead>
             <th scope="col">#</th>
@@ -27,7 +33,7 @@
                         </td>
                         <td>
                             <div class="row">
-                                <div class="col-1"><a class="btn btn-warning" href="{{ route("komentar.edit",$post->id) }}" >EDIT</a></div>
+                                <div class="col-1"><a class="btn btn-warning" href="{{ url("komentar",$post->id) }}" >INFO</a></div>
                                 <div class="col-2 ps-5">
                                     <form action="{{url('komentar',$post->id)}}" method="post">
                                         @csrf
