@@ -1,3 +1,4 @@
+{{--@dd($posts)--}}
 @extends('layout.layout')
 
 @section("content")

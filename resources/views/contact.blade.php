@@ -31,6 +31,7 @@
                     Name: {{ old('name') }}<br>
                     Email: {{ old('email') }}<br>
                     Message: {{ old('message') }}<br>
+                    <a href="{{ route('komentar.index') }}" class="btn btn-success">SHOW KOMENTAR</a>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
