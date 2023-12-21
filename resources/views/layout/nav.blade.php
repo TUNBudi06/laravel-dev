@@ -17,9 +17,27 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link rounded {{ request()->url() === route("contact")  ? "active" : ""  }}" href="{{route("contact")}}">Contact</a>
-                </li><li class="nav-item">
-                    <a class="nav-link rounded {{ request()->url() === route("komentar.index")  ? "active" : ""  }}" href="{{route("komentar.index")}}"><small>Komentar</small></a>
-                </li>
+                @if(!auth()->check())
+                    <li class="nav-item">
+                        <a class="nav-link {{ (request()->url() == route("login")) ? "active" : ""}}" href="{{route("login")}}">Login</a>
+                    </li>
+                @else
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @php
+                                // Extracting and displaying the last name
+                                $nameParts = explode(' ', auth()->user()->name);
+                                $lastName = end($nameParts);
+                                echo $lastName;
+                            @endphp
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{route("komentar.index")}}"><small>Komentar</small></a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{{route("logout")}}">Logout</a></li>
+                        </ul>
+                    </li>
+                    @endif
             </ul>
         </div>
     </div>
